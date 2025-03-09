@@ -33,6 +33,11 @@ io.on("connection", (socket) => {
   SocketHandler(socket);
 });
 
+// ✅ Add this default route at the top of all routes
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully!");
+});
+
 const PORT = process.env.PORT || 6001;
 
 mongoose
